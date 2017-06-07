@@ -6,7 +6,7 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <ion-slides effect='flip' direction='vertical' (ionSlideDidChange)="slideChanged()">
+    <ion-slides effect='flip' direction='vertical'>
         <ion-slide *ngFor="let picture of pictures">
             <picture [picture]="picture">
             </picture>
