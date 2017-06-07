@@ -20,7 +20,7 @@ export class Section {
     }
 
     ngOnInit() {
-        this.http.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=" + this.tag + "&sort=interestingness-desc&api_key=0c731f4470260b5ff4ccc3d519d07697&format=json&nojsoncallback=1&per_page=10")
+        this.http.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=" + "purple" + "&sort=interestingness-desc&api_key=0c731f4470260b5ff4ccc3d519d07697&format=json&nojsoncallback=1&per_page=10")
             .map(response => response.json().photos.photo)
             .subscribe(pictures => this.pictures = pictures);
     }
@@ -31,7 +31,7 @@ export class Section {
             let newPage = this.pictures.length / 10 + 1;
 
             this.pendingQuery = true;
-            this.http.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=" + this.tag + "&sort=interestingness-desc&api_key=0c731f4470260b5ff4ccc3d519d07697&format=json&nojsoncallback=1&per_page=10&page=" + newPage)
+            this.http.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=" + "purple" + "&sort=interestingness-desc&api_key=0c731f4470260b5ff4ccc3d519d07697&format=json&nojsoncallback=1&per_page=10&page=" + newPage)
                 .map(response => response.json().photos.photo)
                 .subscribe(pictures => {
                     this.pictures = this.pictures.concat(pictures);
