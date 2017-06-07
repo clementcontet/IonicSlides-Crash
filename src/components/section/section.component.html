@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Slides crash
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-slides effect='flip' direction='vertical' (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let picture of pictures">
+            <picture [picture]="picture">
+            </picture>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
